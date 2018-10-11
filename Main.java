@@ -1,38 +1,55 @@
 package application;
-	
-
 
 import javafx.application.Application;
-import javafx.stage.Stage;
-import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
-
+import javafx.scene.control.Button;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 
 public class Main extends Application {
-	@Override
+	
+	Stage window;
+	
+	Button btn;
+	
+	
+	@Override  //Stage primaryStage = Main Window
 	public void start(Stage primaryStage) {
-		//creating a Group object
-		Group group = new Group();
+		
+		window = primaryStage; 
+		
+		btn = new Button("testing this shit");
+		
+		//layout 
+		StackPane layout = new StackPane();
+		layout.getChildren().add(btn); 
+		
+		//creating the Scene = content of the window
+		//Scene(layout,width,height)
+		Scene scene = new Scene(layout,200,600);
+		window.setTitle("Wrestler Simulator");// Main window Title.
+		
+		window.setScene(scene);
 		
 		
-		//Creating a Scene by passing the group object, height and width
-		Scene scene = new Scene(group,600, 300);
 		
-		//setting color to the scene
-		//scene.setFill(Color.blue);
 		
-		//setting the title to stage		
-		primaryStage.setTitle("Sample Application");
 		
-		//Adding the scene to Stage
-		primaryStage.setScene(scene);
 		
-		//Displaying the contents of the stage
-		primaryStage.show();
+		
+		
+		
+		
+		
+		// Display the contents of the scene using the method named show()
+		window.show();
+		
+		
 	}
 	
 	public static void main(String[] args) {
-		launch(args);
+		launch(args); //The start() method is called by the launch(args).
 	}
+
+	
 }
