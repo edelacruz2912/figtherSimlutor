@@ -36,11 +36,11 @@ public class WrestlerView extends BorderPane implements EventHandler<ActionEvent
 	{
 		titleForTheTop = new Label("ROYALRAMBLE");//To have a label in the top.
 		startBtn = new Button("START");//to start the simulation
-		
+		startBtn.setOnAction(this);//setting the actionListener
 		this.setTop(titleForTheTop);		
 		this.setCenter(wrestlerPane);
 		this.setBottom(startBtn);
-		
+		//System.out.println("wrestlerView created");
 		
 	}	
 	//why I can't put this code outside.
@@ -48,7 +48,7 @@ public class WrestlerView extends BorderPane implements EventHandler<ActionEvent
 	@Override //This method might be move to controllers
 	public void handle(ActionEvent event) {
 		// TODO Auto-generated method stub
-		System.out.println("handle method gets triggered.");
+		//System.out.println("handle method gets triggered.");
 		if(event.getSource() == startBtn)
 		{
 			System.out.println("button Works");
